@@ -12,7 +12,7 @@ plugins/*
 !plugins/biz-hours-widget/
 # Ignore everything in "themes" except the active theme. #
 themes/*
-!themes/inhabitant/
+!themes/country_gourmet-theme/
 # Ignore packages #
 themes/inhabitant/node_modules/
 
