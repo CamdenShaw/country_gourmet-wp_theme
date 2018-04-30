@@ -15,6 +15,7 @@ themes/*
 !themes/country_gourmet-theme/
 # Ignore packages #
 themes/inhabitant/node_modules/
+themes/country_gourmet-theme/.idea/
 
 # Ignore OS files #
 .DS_Store
