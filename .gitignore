@@ -9,7 +9,7 @@
 # Ignore everything in "plugins" except certain plugins. #
 plugins/*
 !plugins/country_gourmet-functionality/
-!plugins/biz-hours-widget/
+!plugins/business-hours-widget/
 # Ignore everything in "themes" except the active theme. #
 themes/*
 !themes/country_gourmet-theme/
