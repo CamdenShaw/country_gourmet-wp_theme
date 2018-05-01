@@ -9,3 +9,62 @@ const gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     eslint = require('gulp-eslint'),
     browserSync = require('browser-sync')
+
+let plumberErrorHandler = {
+    errorHandler: notify.onError({
+        title: 'Gulp',
+        message: 'Error: <%= error.message %>'
+    })
+}
+
+gulp.task('sass', () => {
+    gulp.src('./sass/styles.scss')
+        .pipe(plumber(plumberErrorHandler))
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions']
+        }))
+        .pipe(gulp.dest('./'))
+        .pipe(cssnano())
+        .pipe(rename('style.min.css'))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest('./build/css'))
+})
+
+gulp.task('scripts', ['lint'], () => {
+    gulp.src('./js/*.js')
+        .pipe(uglify())
+        .pipe(rename({
+            extname: '.min.js'
+        }))
+        .pipe(gulp.dest('./build/js'))
+})
+
+gulp.task('lint', () => {
+    return gulp.src(['./js/*.js'])
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError())
+})
+
+gulp.task('browser-sync', () => {
+    let files = [
+        './build/css/*.css',
+        './build/js/*.js',
+        './*.php',
+        './**/*.php'
+    ]
+
+    browserSync.init(files, {
+        proxy: 'localhost:8888/country-gourmet',
+    })
+    gulp.watch(files).on('change', browserSync.reload)
+})
+
+gulp.task('watch', () => {
+    gulp.watch('./sass/*.scss', ['sass'])
+    gulp.watch('./js/*.js', ['scripts'])
+})
+
+gulp.task('default', ['watch', 'browser-sync'])

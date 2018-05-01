@@ -1,0 +1,41 @@
+/*!
+Theme Name: Country Gourmet Theme
+Theme URI: https://github.com/CamdenShaw/country_gourmet-wp_theme
+Author: Camden Shaw
+Author URI: http://camdenshaw.ca
+Description: A theme for Country Gourmet, based on lessons from RED academy(http://www.redacademy.com/), which based their lessons on Underscores(http://unerscores.me/).
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: cafe, live music, acoustic, art gallery, home-style, coffee
+
+This theme, like WordPress, is licensed under the GPL.
+It's use was designed first and foremost for the Country Gourmet's website.
+
+Country Gourmet Theme is based on the RED Starter Theme, which was in turn based on the Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+@import "variables";
+@import "mixins";
+
+@import "normalize";
+@import "fonts";
+@import "globals";
+@import "typography";
+@import "elements";
+@import "forms";
+@import "navigation";
+@import "modules";
+@import "footer-widgets";
+@import "content";
+@import "media";
+@import "page-templates";
+@import "front_page";
+@import "footer";
+@import "about";
+@import "search";
+@import "404";
