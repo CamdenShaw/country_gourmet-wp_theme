@@ -27,5 +27,8 @@ get_header(); ?>
             ?>
         </div>
     </main>
+    <div class="footer-widget-area">
+        <?php get_sidebar( 'footer-widget' ); ?>
+    </div>
 </div>
 <?php get_footer(); ?>

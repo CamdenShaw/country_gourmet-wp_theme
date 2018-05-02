@@ -12,7 +12,7 @@ class RF_General {
      */
     public function __construct() {
         // General housekeeping
-        add_filter( 'http_request_args', array( $this, 'hid_plugin_from_updates' ), 5, 2 );
+        add_filter( 'http_request_args', array( $this, 'hide_plugin_from_updates' ), 5, 2 );
         add_action( 'admin_notices', array( $this, 'hide_update_notice_nonadmins' ), 1 );
 
         // Admin bar and menus customization
@@ -116,11 +116,11 @@ class RF_General {
     public function set_updated_messages( $messages ) {
         global $post, $post_ID;
 
-        $post_type = get_pst_type( $post_ID );
+        $post_type = get_post_type( $post_ID );
         $obj = get_post_type_object( $post_type );
         $singular = $obj->labels->singular_name;
 
-        $messages[$post_tpe] = array(
+        $messages[$post_type] = array(
             0 => '', // unused. Messages start at index 1.
             1 => sprintf( __( $singular . ' updated. <a href"%s">View ' . strtolower( $singular ) . '</a>' ), esc_url( get_permalink( $post_ID ) ) ),
             2 => __( 'Custom field updated.' ),

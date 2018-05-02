@@ -1,0 +1,33 @@
+// Structure
+
+$base__space-unit: 1.5rem;
+$width: 1120px;
+
+//Colors
+
+$color__background-body: #dede;
+$color__text-main: #1212;
+$color__border: #a1a1;
+
+$color__background-screen: #e9e9;
+$color__text-screen: #889977;
+
+$color__background-hr: #aaa;
+$color__background-pre: #e4e4;
+$color__background-ins: #eee987;
+$color__border-abbr: #78d;
+
+$color__link: darken(green, 10%);
+$color__link-visited: navyblue;
+$color__link-hover: lighten(green, 20%);
+$color__green-brand: darken(green, 25%);
+$color__orange-brand: darken(orange, 7%);
+$color__yellow-brand: darken(yellow, 5%);
+$color__l-grey-brand: #a3a3;
+$color__m-grey-brand: #9a9a;
+
+// Typography
+
+$font__main: sans-serif;
+$font__line-height-body: 1.5;
+$font__line-height-pro: 1.6;

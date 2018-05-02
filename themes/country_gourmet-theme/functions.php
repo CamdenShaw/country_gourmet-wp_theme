@@ -89,10 +89,6 @@ function country_gourmet_scripts() {
 
     wp_enqueue_script( 'country_gourmet_cuppaJoe', get_template_directory_uri(), '/build/js/cuppaJoe.min.js', array(), '20130115', true );
 
-    // PUT FUTURE JavaScript SCRIPTS HERE
-
-    // USE IF STATEMENTS TO LOAD SCRIPTS ONLY ON CERTAIN PAGES
-
 }
 add_action( 'wp_enqueue_scripts', 'country_gourmet_scripts' );
 

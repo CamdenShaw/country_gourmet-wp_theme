@@ -28,13 +28,13 @@
  }
 
  class Country_Gourmet_Business_Hours extends WP_Widget {
-     /**
-      * Unique identifier for your widget.
+    /**
+     * Unique identifier for your widget.
 
-      @since 1.0.0
+    @since 1.0.0
 
-      @var string
-      */
+    @var string
+    */
     protected $widget_slug = 'country_gourmet-business_hours';
 
     /*-----------------------------------------------------*/
@@ -99,7 +99,7 @@
         $friday = empty( $instance['friday'] ) ? '' : apply_filters( 'widget_title', $instance['friday'] );
         $saturday = empty( $instance['saturday'] ) ? '' : apply_filters( 'widget_title', $instance['saturday'] );
         $sunday = empty( $instance['sunday'] ) ? '' : apply_filters( 'widget_title', $instance['sunday'] );
-        $address = empty( $instance['addresss'] ) ? '' : apply_filters( 'widget_title', $instance['address'] );
+        $address = empty( $instance['address'] ) ? '' : apply_filters( 'widget_title', $instance['address'] );
 
         ob_start();
 
@@ -135,6 +135,7 @@
         $instance['friday'] = strip_tags( $new_instance['friday']);
         $instance['saturday'] = strip_tags( $new_instance['saturday'] );
         $instance['sunday'] = strip_tags( $new_instance['sunday'] );
+        $instance['address'] = strip_tags( $new_instance['address'] );
 
         return $instance;
      } // end widget
@@ -169,6 +170,7 @@
         $friday = strip_tags( $instance['friday'] );
         $saturday = strip_tags( $instance['saturday'] );
         $sunday = strip_tags( $instance['sunday'] );
+        $address = strip_tags( $instance['address'] );
     
         // Display the admin form
         include( plugin_dir_path( __FILE__ ) . 'views/admin.php' );

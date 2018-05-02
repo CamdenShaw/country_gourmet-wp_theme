@@ -21,6 +21,21 @@ function country_gourmet_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'country_gourmet_body_classes' );
 
+// Change the logo on the WP login screen to be Country Gourmet's logo
+function country_gourmet_login_logo() {
+    $images = wp_get_attachment_image_src(19, "full");
+    $image = $images[0];
+    echo "<style type='text/css'>
+        #login h1 a, .login h1 a {
+            background-image: url(" . $image . "); 
+            margin:0 auto; 
+            background-size: 100%; 
+            width: 100%;
+        }
+    </style>";
+}
+add_filter( 'login_head', 'country_gourmet_login_logo' );
+
 function country_gourmet_archive_title( $title ) {
     if ( is_post_type_archive( 'staff' ) ) {
         $title = 'Our Staff';

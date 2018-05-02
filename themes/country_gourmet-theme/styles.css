@@ -1,0 +1,151 @@
+/*!
+Theme Name: Country Gourmet Theme
+Theme URI: https://github.com/CamdenShaw/country_gourmet-wp_theme
+Author: Camden Shaw
+Author URI: http://camdenshaw.ca
+Description: A theme for Country Gourmet, based on lessons from RED academy(http://www.redacademy.com/), which based their lessons on Underscores(http://unerscores.me/).
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: cafe, live music, acoustic, art gallery, home-style, coffee
+
+This theme, like WordPress, is licensed under the GPL.
+It's use was designed first and foremost for the Country Gourmet's website.
+
+Country Gourmet Theme is based on the RED Starter Theme, which was in turn based on the Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+/*------------------------------------------------------------------------
+# Navigation
+------------------------------------------------------------------------*/
+/* Links */
+a:link {
+  color: #db8e00; }
+
+a {
+  color: #db8e00; }
+  a:visited {
+    color: #db8e00; }
+  a:hover, a:focus, a:active {
+    color: #00e600; }
+  a:focus {
+    outline: black thin dashed; }
+  a:hover, a:active {
+    outline: 0; }
+
+/* Menus */
+.menu-item {
+  padding: 10px; }
+
+div#primary-menu {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  min-width: 1120px;
+  z-index: 1000;
+  padding: 0;
+  height: 50px;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  font-size: 0.982rem;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px #a1a1 solid; }
+  div#primary-menu a.icon-search:hover {
+    cursor: pointer; }
+  div#primary-menu a:visited {
+    color: #db8e00; }
+  div#primary-menu a:visited:hover {
+    color: #00e600;
+    cursor: pointer; }
+  div#primary-menu .fa-search {
+    padding: 14px; }
+    div#primary-menu .fa-search:hover {
+      color: #00e600; }
+    div#primary-menu .fa-search:visited:hover {
+      color: #00e600; }
+  div#primary-menu .search-form {
+    transition: .5s;
+    width: 0;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: none;
+    border: none; }
+    div#primary-menu .search-form .search-submit {
+      display: none; }
+    div#primary-menu .search-form fieldset {
+      margin: 0;
+      padding: 0;
+      border: 0; }
+      div#primary-menu .search-form fieldset input {
+        background-color: rgba(0, 0, 0, 0);
+        border: 0;
+        padding: 12px;
+        width: 100%; }
+        div#primary-menu .search-form fieldset input:focus {
+          outline: none; }
+  div#primary-menu .search-form-click {
+    transition: 1s;
+    width: 200px; }
+
+.main-navigation {
+  clear: both;
+  display: block;
+  float: left;
+  width: 100%; }
+  .main-navigation ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0; }
+    .main-navigation ul ul {
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      position: absolute;
+      top: 1.5rem;
+      left: -999rem;
+      z-index: 99999; }
+      .main-navigation ul ul ul {
+        left: -99999rem;
+        top: 0; }
+      .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+        left: 100%; }
+      .main-navigation ul ul a {
+        width: 200px; }
+    .main-navigation ul li:hover > ul, .main-navigation ul li.focus > ul {
+      left: auto; }
+  .main-navigation li {
+    float: left;
+    position: relative; }
+  .main-navigation a {
+    display: block;
+    text-decoration: none; }
+
+@media screen and (min-width: 768px) {
+  .menu-toggle {
+    display: none; }
+  .main-navigation ul {
+    display: block; } }
+
+.site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation {
+  margin: 0 0 1.5rem;
+  overflow: hidden; }
+
+.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
+  float: left;
+  width: 50%; }
+
+.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  widht: 50%; }

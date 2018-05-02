@@ -36,6 +36,7 @@
         </p>
         <?php endif; ?>
     </div>
+    <?php if ( strlen( trim( $address ) ) > 0 ) : ?>
     <div class="country_gourmet-widget-address">
         <p>
             <span class="widget_address">Address:</span> <?php echo $address; ?>

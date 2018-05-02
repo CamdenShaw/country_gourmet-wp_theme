@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Country Gourmet Functionality
+ * @package Country_Gourmet_Functionality
  * @author Camden Shaw <https://github.com/CamdenShaw>
  * 
  * @license GPL-2.0+
