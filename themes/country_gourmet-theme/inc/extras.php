@@ -53,7 +53,7 @@ function country_gourmet_about_dynamic_css() {
     if ( ! $image ) {
         return;
     }
-    $banner_css = ".vatjss-custom-hero{
+    $banner_css = ".country_gourmet-custom-hero{
     background: linear-gradient(230deg, rgba(0, 0, 0, 0.45) 0, rgba(0, 0, 0, 0,45)),
         url({$image}) no-repeat center bottom;
        height: 100vh;
