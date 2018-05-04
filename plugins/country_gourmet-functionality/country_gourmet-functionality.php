@@ -38,4 +38,11 @@ register_activation_hook( __FILE__, array( 'RF_General', 'plugin_activation' ) )
  * 
  * @since 1.0.0
  */
+include_once( RF_DIR . '/lib/functions/post-types.php');
+
+/**
+ * Taxonomies
+ *
+ * @since 1.0.0
+ */
 include_once( RF_DIR . '/lib/functions/taxonomies.php');

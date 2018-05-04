@@ -44,6 +44,28 @@ function country_gourmet_archive_title( $title ) {
 }
 add_filter( 'get_the_archive_title', 'country_gourmet_archive_title' );
 
+/* FRONT PAGE HERO BACKGROUND */
+function country_gourmet_front_page_dynamic_css() {
+    if ( ! is_front_page() ) {
+        return;
+    }
+    $image = CFS()->get( 'front_page_header_image' );
+    if ( ! $image ) {
+        return;
+    }
+    $hero_css = ".page-template-default .front-page-header {
+        background: url({$image}) no-repeat center center, linear-gradient( to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100% );
+        height: 50vh;
+        min-height: 400px;
+        width: 80%;
+        min-width: 500px;
+        background-size: cover, cover;
+        margin: 0 auto;
+    }";
+    wp_add_inline_style( 'country_gourmet-style', $hero_css );
+}
+add_action( 'wp_enqueue_scripts', 'country_gourmet_front_page_dynamic_css' );
+
 /* ABOUT HERO BACKGROUND */
 function country_gourmet_about_dynamic_css() {
     if( ! is_page_template( 'page-templates/about.php' ) ) {
@@ -54,10 +76,10 @@ function country_gourmet_about_dynamic_css() {
         return;
     }
     $banner_css = ".country_gourmet-custom-hero{
-    background: linear-gradient(230deg, rgba(0, 0, 0, 0.45) 0, rgba(0, 0, 0, 0,45)),
-        url({$image}) no-repeat center bottom;
-       height: 100vh;
-       background-size: cover;
+        background: linear-gradient(230deg, rgba(0, 0, 0, 0.45) 0, rgba(0, 0, 0, 0.45)),
+            url({$image}) no-repeat center top;
+           height: 400px;
+           background-size: cover;
     }";
     wp_add_inline_style( 'country_gourmet-style', $banner_css );
 }
