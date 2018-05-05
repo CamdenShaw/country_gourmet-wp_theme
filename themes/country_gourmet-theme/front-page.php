@@ -51,19 +51,32 @@ get_header(); ?>
     </div>
 
     <main id="main" class="site-main" role="main">
-        <h4 class="fp-menu-title">Menu</h4>
-        <div class="fp-menu-items">
-            <?php
-                $terms = get_terms( 'product-type' );
-                if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-                    echo '<ul>';
-                    foreach ( $terms as $term ) {
-                        echo '<li><img class="' . $term->slug . '" src=""' . '/>';
-                        echo '<p>' . $term->description . '</p> <a href="' . get_term_link( $term ) . '">' . $term->name . '</a>';
+        <div class="fp-mn-container">
+            <h4 class="fp-mn-title">Music Night</h4>
+            <div class="fp-mn-content">
+                <?php
+                    $music_night = get_terms( 'music_nights-type' );
+                    if ( ! empty( $music_night ) && ! is_wp_error( $music_night ) ) {
+                        $music = $music_night[-1];
+                         if( empty( $music->artist_picture )) {
+                             echo "<div class='mn-image-container'><img class='$music->slug' src='$music->artist_picture'/></div>";
+                         } else {
+                             echo "<div class='mn-image-container'><img class='$music->slug' src='/wp-content/uploads/2018/05/country-gourmet-mn-placeholder.jpg'/></div>";
+                         }
+
+                        echo "<div class='mn-info-container'>
+                                <p class='$music->slug' src='/wp-content/uploads/2018/05/country-gourmet-mn-placeholder.jpg'</p>
+                            </div>";
+                    } else {
+                        echo "<div class='mn-image-container'>
+                                <img class='mn-image-placeholder' src='wp-content/uploads/2018/05/country-gourmet-mn-placeholder.jpg'/>
+                            </div>
+                            <div class='mn-info-container'>
+                                <p class='mn-info-placeholder' src='/wp-content/uploads/2018/05/country-gourmet-mn-placeholder.jpg'>Trifecta, cup coffee, shop, est milk coffee cortado java milk. Caramelization carajillo, cappuccino, eu, roast, robust irish id sit mocha. Bar extra galão java, so ristretto robust skinny plunger pot americano.</p>
+                            </div>";
                     }
-                    echo '</ul>';
-                }
-            ?>
+                ?>
+            </div>
         </div>
     </main>
     <div class="footer-widget-area">

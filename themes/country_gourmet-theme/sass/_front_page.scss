@@ -17,6 +17,7 @@ article#post-4 {
     transition: .6s;
     box-shadow: 0 0 5px -2px rgb(200, 200, 200);
     box-sizing: border-box;
+    border-radius: 1px;
   }
   a.fp-main-menu{
     height: 60px;
@@ -33,6 +34,7 @@ article#post-4 {
       left: 50%;
       transform: translateX(-50%);
       height: 0;
+      border-radius: 1px;
       p {
         color: $color__link-hover;
         margin: 0;
@@ -54,6 +56,7 @@ article#post-4 {
           transition: .6s;
           transition-delay: 0ms;
           letter-spacing: 4px;
+          font-size: 1.3rem;
         }
       }
     }
@@ -62,7 +65,6 @@ article#post-4 {
     display: flex;
     height: calc(100% - 60px);
     width: 100%;
-    font-size: 1.3rem;
     a {
       height: 100%;
       width: 14.28%;
@@ -82,6 +84,7 @@ article#post-4 {
         align-items: center;
         justify-content: center;
         background-color: rgba(0, 0, 0, 0);
+        border-radius: 1px;
         p {
           color: $color__link-hover;
           transform: translateY(50%);
@@ -93,7 +96,6 @@ article#post-4 {
       &:hover {
         color: $color__link;
         transition: .6s;
-        font-size: 1.3rem;
         div {
           height: 100%;
           transition: .6s;
@@ -103,9 +105,27 @@ article#post-4 {
             transform: translateY(0);
             transition: .6s;
             letter-spacing: 4px;
+            font-size: 1.3rem;
           }
         }
       }
     }
+  }
+}
+
+.fp-mn-content {
+  display: flex;
+  .mn-image-container, .mn-info-container {
+    width: 50%;
+  }
+  .mn-image-container {
+    padding-right: 2px;
+  }
+  .mn-info-container {
+    padding-left: 2px;
+  }
+  .mn-image-placeholder {
+    width: 100%;
+    margin: auto;
   }
 }

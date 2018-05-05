@@ -246,7 +246,7 @@ div#primary-menu {
       flex-direction: row;
   text-transform: uppercase;
   background-color: rgba(255, 255, 255, 0.7);
-  border-bottom: 1px #a1a1a1 solid; }
+  border-bottom: 1px #41b141 solid; }
   div#primary-menu li {
     padding: 16px; }
   div#primary-menu a.icon-search:hover {
@@ -347,7 +347,9 @@ aside.widget.country_gourmet-business_hours-class {
   position: fixed;
   width: 25%;
   right: 0;
-  top: 100px; }
+  top: 83px;
+  min-height: 100vh;
+  border-left: solid 1px #41b141; }
   aside.widget.country_gourmet-business_hours-class .country_gourmet-widget-address {
     max-width: 251px;
     margin-left: auto;
@@ -420,6 +422,10 @@ footer.site-footer {
 div#page.hfeed.site {
   margin-right: calc(25% + 20px); }
 
+.site-main {
+  width: 90%;
+  margin: 0 auto; }
+
 article#post-4 {
   padding-top: 100px;
   font-family: "Trebuchet MS", Impact;
@@ -440,7 +446,8 @@ article#post-4 {
     color: #00e600;
     transition: .6s;
     box-shadow: 0 0 5px -2px #c8c8c8;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    border-radius: 1px; }
   article#post-4 a.fp-main-menu {
     height: 60px;
     width: 100%;
@@ -455,7 +462,8 @@ article#post-4 {
       top: 0;
       left: 50%;
       transform: translateX(-50%);
-      height: 0; }
+      height: 0;
+      border-radius: 1px; }
       article#post-4 a.fp-main-menu div p {
         color: #00e600;
         margin: 0;
@@ -474,13 +482,13 @@ article#post-4 {
           margin-top: 20px;
           transition: .6s;
           transition-delay: 0ms;
-          letter-spacing: 4px; }
+          letter-spacing: 4px;
+          font-size: 1.3rem; }
   article#post-4 .fp-menu-link-container {
     display: -ms-flexbox;
     display: flex;
     height: calc(100% - 60px);
-    width: 100%;
-    font-size: 1.3rem; }
+    width: 100%; }
     article#post-4 .fp-menu-link-container a {
       height: 100%;
       width: 14.28%;
@@ -506,7 +514,8 @@ article#post-4 {
             align-items: center;
         -ms-flex-pack: center;
             justify-content: center;
-        background-color: rgba(0, 0, 0, 0); }
+        background-color: rgba(0, 0, 0, 0);
+        border-radius: 1px; }
         article#post-4 .fp-menu-link-container a div p {
           color: #00e600;
           transform: translateY(50%);
@@ -514,8 +523,7 @@ article#post-4 {
           white-space: nowrap; }
       article#post-4 .fp-menu-link-container a:hover {
         color: #004d00;
-        transition: .6s;
-        font-size: 1.3rem; }
+        transition: .6s; }
         article#post-4 .fp-menu-link-container a:hover div {
           height: 100%;
           transition: .6s;
@@ -524,7 +532,21 @@ article#post-4 {
             color: #004d00;
             transform: translateY(0);
             transition: .6s;
-            letter-spacing: 4px; }
+            letter-spacing: 4px;
+            font-size: 1.3rem; }
+
+.fp-mn-content {
+  display: -ms-flexbox;
+  display: flex; }
+  .fp-mn-content .mn-image-container, .fp-mn-content .mn-info-container {
+    width: 50%; }
+  .fp-mn-content .mn-image-container {
+    padding-right: 2px; }
+  .fp-mn-content .mn-info-container {
+    padding-left: 2px; }
+  .fp-mn-content .mn-image-placeholder {
+    width: 100%;
+    margin: auto; }
 
 footer.site-footer {
   position: relative;
