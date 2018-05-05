@@ -5,19 +5,26 @@
 /* Links */
 
 a:link {
-  color: $color__orange-brand;
+  color: $color__link;
+  text-decoration: none;
+  transition-delay: 0ms;
 }
 
 a {
-  color: $color__orange-brand;
+  color: $color__link;
+  text-decoration: none;
+  transition: none;
   &:visited {
-    color: $color__orange-brand;
+    color: $color__link-visited;
+    transition: none;
   }
   &:hover, &:focus, &:active {
     color: $color__link-hover;
+    transition: none;
+    transition-delay: 0ms;
   }
   &:focus {
-    outline: black thin dashed;
+    outline: rgba(0, 0, 0, 0.2) thin dashed;
   }
   &:hover, &:active {
     outline: 0;
@@ -46,6 +53,9 @@ div#primary-menu {
   text-transform: uppercase;
   background-color: rgba(255, 255, 255, 0.7);
   border-bottom: 1px $color__border solid;
+  li {
+    padding: 16px;
+  }
   a.icon-search:hover {
     cursor: pointer;
   }

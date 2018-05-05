@@ -202,16 +202,23 @@ body {
 ------------------------------------------------------------------------*/
 /* Links */
 a:link {
-  color: #db8e00; }
+  color: #004d00;
+  text-decoration: none;
+  transition-delay: 0ms; }
 
 a {
-  color: #db8e00; }
+  color: #004d00;
+  text-decoration: none;
+  transition: none; }
   a:visited {
-    color: #db8e00; }
+    color: navyblue;
+    transition: none; }
   a:hover, a:focus, a:active {
-    color: #00e600; }
+    color: #00e600;
+    transition: none;
+    transition-delay: 0ms; }
   a:focus {
-    outline: black thin dashed; }
+    outline: rgba(0, 0, 0, 0.2) thin dashed; }
   a:hover, a:active {
     outline: 0; }
 
@@ -240,6 +247,8 @@ div#primary-menu {
   text-transform: uppercase;
   background-color: rgba(255, 255, 255, 0.7);
   border-bottom: 1px #a1a1a1 solid; }
+  div#primary-menu li {
+    padding: 16px; }
   div#primary-menu a.icon-search:hover {
     cursor: pointer; }
   div#primary-menu a:visited {
@@ -412,7 +421,110 @@ div#page.hfeed.site {
   margin-right: calc(25% + 20px); }
 
 article#post-4 {
-  padding-top: 100px; }
+  padding-top: 100px;
+  font-family: "Trebuchet MS", Impact;
+  font-weight: 900;
+  font-size: 1.2rem; }
+  article#post-4 header.front-page-header {
+    padding: 2px;
+    border: 3px solid black; }
+  article#post-4 a {
+    min-height: 60px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    position: relative;
+    color: #00e600;
+    transition: .6s;
+    box-shadow: 0 0 5px -2px #c8c8c8;
+    box-sizing: border-box; }
+  article#post-4 a.fp-main-menu {
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden; }
+    article#post-4 a.fp-main-menu div {
+      margin: 0 auto 60px;
+      width: 100%;
+      transition: .6s;
+      background-color: rgba(0, 0, 0, 0);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 0; }
+      article#post-4 a.fp-main-menu div p {
+        color: #00e600;
+        margin: 0;
+        transition: .6s;
+        transitoin-delay: 0ms; }
+    article#post-4 a.fp-main-menu:hover {
+      color: #004d00;
+      transition: .6s; }
+      article#post-4 a.fp-main-menu:hover div {
+        transition: .6s;
+        margin: 0 auto;
+        height: 100%;
+        background-color: #ffb733; }
+        article#post-4 a.fp-main-menu:hover div p {
+          color: #004d00;
+          margin-top: 20px;
+          transition: .6s;
+          transition-delay: 0ms;
+          letter-spacing: 4px; }
+  article#post-4 .fp-menu-link-container {
+    display: -ms-flexbox;
+    display: flex;
+    height: calc(100% - 60px);
+    width: 100%;
+    font-size: 1.3rem; }
+    article#post-4 .fp-menu-link-container a {
+      height: 100%;
+      width: 14.28%;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+      text-align: center;
+      text-orientation: sideways;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+      -ms-flex-line-pack: center;
+          align-content: center; }
+      article#post-4 .fp-menu-link-container a div {
+        margin: 0 auto;
+        transform: rotate(180deg);
+        transition: .6s;
+        height: 0;
+        width: 100%;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+            align-items: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+        background-color: rgba(0, 0, 0, 0); }
+        article#post-4 .fp-menu-link-container a div p {
+          color: #00e600;
+          transform: translateY(50%);
+          transition: .6s;
+          white-space: nowrap; }
+      article#post-4 .fp-menu-link-container a:hover {
+        color: #004d00;
+        transition: .6s;
+        font-size: 1.3rem; }
+        article#post-4 .fp-menu-link-container a:hover div {
+          height: 100%;
+          transition: .6s;
+          background-color: #ffb733; }
+          article#post-4 .fp-menu-link-container a:hover div p {
+            color: #004d00;
+            transform: translateY(0);
+            transition: .6s;
+            letter-spacing: 4px; }
 
 footer.site-footer {
   position: relative;

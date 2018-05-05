@@ -54,7 +54,7 @@ function country_gourmet_front_page_dynamic_css() {
         return;
     }
     $hero_css = ".page-template-default .front-page-header {
-        background: url({$image}) no-repeat center center, linear-gradient( to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100% );
+        background: linear-gradient( to bottom, rgba(0, 40, 0, 0.4) 0%, rgba(0, 40, 0, 0.4) 100% ), url({$image}) no-repeat center center;
         height: 50vh;
         min-height: 400px;
         width: 80%;

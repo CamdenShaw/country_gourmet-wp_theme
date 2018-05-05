@@ -1,5 +1,111 @@
-
-
 article#post-4 {
   padding-top: 100px;
+  font-family: "Trebuchet MS", Impact;
+  font-weight: 900;
+  font-size: 1.2rem;
+  header.front-page-header {
+    padding: 2px;
+    border: 3px solid black;
+  }
+  a {
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: $color__link-hover;
+    transition: .6s;
+    box-shadow: 0 0 5px -2px rgb(200, 200, 200);
+    box-sizing: border-box;
+  }
+  a.fp-main-menu{
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    div {
+      margin: 0 auto 60px;
+      width: 100%;
+      transition: .6s;
+      background-color: rgba(0, 0, 0, 0);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 0;
+      p {
+        color: $color__link-hover;
+        margin: 0;
+        transition: .6s;
+        transitoin-delay: 0ms;
+      }
+    }
+      &:hover {
+        color: $color__link;
+        transition: .6s;
+        div {
+          transition: .6s;
+          margin: 0 auto;
+          height: 100%;
+          background-color: $color__lightorange-brand;
+        p {
+          color: $color__link;
+          margin-top: 20px;
+          transition: .6s;
+          transition-delay: 0ms;
+          letter-spacing: 4px;
+        }
+      }
+    }
+  }
+  .fp-menu-link-container {
+    display: flex;
+    height: calc(100% - 60px);
+    width: 100%;
+    font-size: 1.3rem;
+    a {
+      height: 100%;
+      width: 14.28%;
+      writing-mode: vertical-rl;
+      text-align: center;
+      text-orientation: sideways;
+      display: flex;
+      justify-content: flex-end;
+      align-content: center;
+      div {
+        margin: 0 auto;
+        transform: rotate(180deg);
+        transition: .6s;
+        height: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0);
+        p {
+          color: $color__link-hover;
+          transform: translateY(50%);
+          transition: .6s;
+          white-space: nowrap;
+        }
+      }
+
+      &:hover {
+        color: $color__link;
+        transition: .6s;
+        font-size: 1.3rem;
+        div {
+          height: 100%;
+          transition: .6s;
+          background-color: $color__lightorange-brand;
+          p {
+            color: $color__link;
+            transform: translateY(0);
+            transition: .6s;
+            letter-spacing: 4px;
+          }
+        }
+      }
+    }
+  }
 }
