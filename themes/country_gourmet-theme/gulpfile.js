@@ -67,4 +67,17 @@ gulp.task('watch', () => {
     gulp.watch('./js/*.js', ['scripts'])
 })
 
+gulp.task('no-reload', () => {
+    let files = [
+        './build/css/*.css',
+        './build/js/*.js',
+        './*.php',
+        './**/*.php'
+    ]
+
+    browserSync.init(files, {
+        proxy: 'localhost:8888/country-gourmet',
+    })
+})
+
 gulp.task('default', ['watch', 'browser-sync'])
