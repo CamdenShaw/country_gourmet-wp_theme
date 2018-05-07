@@ -8,13 +8,20 @@ aside.widget.country_gourmet-business_hours-class {
   position: fixed;
   width: 25%;
   right: 0;
-  top: 83px;
-  min-height: 100vh;
+  top: 52px;
+  min-height: calc(100vh - 53px);
   border-left: solid 1px $color__border;
 
   .country_gourmet-widget-address {
     max-width: 251px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+.logged-in {
+  aside.widget.country_gourmet-business_hours-class {
+    top: 83px;
+    min-height: calc(100vh - 85px);
   }
 }

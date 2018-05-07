@@ -55,17 +55,31 @@ get_header(); ?>
             <h4 class="fp-mn-title">Music Night</h4>
             <div class="fp-mn-content">
                 <?php
-                    $music_night = get_terms( 'music_nights-type' );
+                    $args =  array(
+                        'post_type' => 'music_night',
+                        'order_by' => 'date',
+                        'order' => 'DESC',
+                        'orderby' => 'date',
+                        'posts_per_page' => '1',
+                        'post_status' => 'publish'
+                    );
+                    $music_night = get_posts( $args );
                     if ( ! empty( $music_night ) && ! is_wp_error( $music_night ) ) {
-                        $music = $music_night[-1];
-                         if( empty( $music->artist_picture )) {
-                             echo "<div class='mn-image-container'><img class='$music->slug' src='$music->artist_picture'/></div>";
+                        $performer = CFS()->get( false, $music_night[0]->ID );
+                         if ( ! empty( $performer['artist_picture'] ) ) {
+                             echo "<div class='mn-image-container'><a href='{$music_night[0]->guid}'><img class='music-night {$music_night[0]->post_name}' src='{$performer['artist_picture']}'/></a></div>";
                          } else {
-                             echo "<div class='mn-image-container'><img class='$music->slug' src='/wp-content/uploads/2018/05/country-gourmet-mn-placeholder.jpg'/></div>";
+                             echo "<div class='mn-image-container'><a href='{$music_night[0]->guid}'><img class='music-night {$music_night[0]->post_name}' src='/wp-content/uploads/2018/05/country-gourmet-mn-placeholder.jpg'/></a></div>";
                          }
 
                         echo "<div class='mn-info-container'>
-                                <p class='$music->slug' src='/wp-content/uploads/2018/05/country-gourmet-mn-placeholder.jpg'</p>
+                                <a href='{$music_night[0]->guid}'><h3 class='mn-name {$music_night[0]->post_name}'>{$performer["artist_name"]}</h3></a>
+                                <p class='mn-bio {$music_night[0]->post_name}'>{$performer["musician_bio"]}</p>
+                                <div class='mn-flex'>
+                                    <p class='mn-genre {$music_night[0]->post_name}'>{$performer["music_genre"]}</p>
+                                    <p class='mn-price {$music_night[0]->post_name}'>{$performer["performance_price"]}</p>
+                                    <p class='mn-date {$music_night[0]->post_name}'>{$performer["date_of_performance"]}</p>
+                                </div>
                             </div>";
                     } else {
                         echo "<div class='mn-image-container'>
@@ -74,6 +88,35 @@ get_header(); ?>
                             <div class='mn-info-container'>
                                 <p class='mn-info-placeholder' src='/wp-content/uploads/2018/05/country-gourmet-mn-placeholder.jpg'>Trifecta, cup coffee, shop, est milk coffee cortado java milk. Caramelization carajillo, cappuccino, eu, roast, robust irish id sit mocha. Bar extra galão java, so ristretto robust skinny plunger pot americano.</p>
                             </div>";
+                    }
+                ?>
+            </div>
+        </div>
+        <div class="fp-gallery-container">
+            <h4 class="fp-gallery-title">Back Gallery</h4>
+            <div class="fp-gallery-content">
+                <?php
+                    $args = array(
+                        'post_type' => 'artwork',
+                        'orderby' => 'date'
+                    );
+                    $gallery_works = get_posts( $args );
+                    if ( ! empty( $gallery_works ) && ! is_wp_error( $gallery_works ) ) {
+                        $i = 0;
+                        while ( $i < 2 ){
+                            foreach ( $gallery_works as $work ) {
+                                if ( has_term( array('slug' => 'back-gallery'), 'artworks-type', $work->ID ) ) {
+                                    $back_gallery = CFS()->get(false, $work->ID);
+                                    if (!empty($back_gallery) && !is_wp_error($back_gallery)) {
+                                        $i++;
+                                        echo "<div class='fp-gallery-cell'>
+                                            <a href='{$work->guid}'><h3 class='fp-gallery-title1'> {$back_gallery[ 'artwork_title' ] } </h3></a>
+                                            <div><a href='{$work->guid}'><img class='fp-gallery-img1 {$work->post_name}' src='{$back_gallery[ 'artwork_image' ] }' /></a></div>
+                                        </div>";
+                                    }
+                                }
+                            }
+                        }
                     }
                 ?>
             </div>

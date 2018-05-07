@@ -140,7 +140,7 @@ function country_gourmet_cpt_artwork() {
         'set_featured_image'    => 'Set Featured Image',
         'remove_featured_image' => 'Remove Featured Image',
         'use_featured_image'    => 'Use as Featured Image',
-        'insert_into_item'      => 'Insert Into Music Night',
+        'insert_into_item'      => 'Insert Into Artwork',
         'uploaded_to_this_item' => 'Upload to This Artwork',
         'items_list'            => 'Artwork List',
         'items_list_navigation' => 'Artwork List Navigation',
