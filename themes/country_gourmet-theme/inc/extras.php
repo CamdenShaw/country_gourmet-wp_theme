@@ -85,3 +85,16 @@ function country_gourmet_about_dynamic_css() {
 }
 add_action ( 'wp_enqueue_scripts', 'country_gourmet_about_dynamic_css');
 
+function country_gourmet_footer_widget_init() {
+    register_sidebar( array(
+        'name'          => esc_html( 'Footer Widget' ),
+        'id'            => 'footer-widget',
+        'description'   => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title-footer">',
+        'after_title'   => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'country_gourmet_footer_widget_init' );
+

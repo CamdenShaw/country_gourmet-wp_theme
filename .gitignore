@@ -10,6 +10,8 @@
 plugins/*
 !plugins/country_gourmet-functionality/
 !plugins/business-hours-widget/
+!plugins/quick-contact-widget/
+!plugins/social-media-links-widget/
 # Ignore everything in "themes" except the active theme. #
 themes/*
 !themes/country_gourmet-theme/

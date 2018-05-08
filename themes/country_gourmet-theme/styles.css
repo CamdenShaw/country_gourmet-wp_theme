@@ -341,23 +341,23 @@ div#primary-menu {
 /*-----------------------------------------------------------------
 # Sidebar
 -----------------------------------------------------------------*/
-aside.widget.country_gourmet-business_hours-class {
+.sidebar-widget-area aside.widget.country_gourmet-business_hours-class {
   padding-right: 20px;
   text-align: center;
   position: fixed;
   width: 25%;
   right: 0;
   top: 52px;
-  min-height: calc(100vh - 53px);
+  min-height: calc(100vh - 52px);
   border-left: solid 1px #41b141; }
-  aside.widget.country_gourmet-business_hours-class .country_gourmet-widget-address {
+  .sidebar-widget-area aside.widget.country_gourmet-business_hours-class .country_gourmet-widget-address {
     max-width: 251px;
     margin-left: auto;
     margin-right: auto; }
 
-.logged-in aside.widget.country_gourmet-business_hours-class {
+.logged-in .sidebar-widget-area aside.widget.country_gourmet-business_hours-class {
   top: 83px;
-  min-height: calc(100vh - 85px); }
+  min-height: calc(100vh - 83px); }
 
 /*---------------------------------------------------------------------
 # Accessibility
@@ -413,6 +413,20 @@ aside.widget.country_gourmet-business_hours-class {
   clear: both;
   content: "";
   display: table; }
+
+.footer-widget-area {
+  display: -ms-flexbox;
+  display: flex; }
+  .footer-widget-area .cg-quick-contact-form-class, .footer-widget-area .country_gourmet-business_hours-class {
+    width: 40%;
+    padding: 15px; }
+  .footer-widget-area .social-media-links-class {
+    width: 20%; }
+  .footer-widget-area .cg-quick-contact-form-class form {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column; }
 
 footer.site-footer {
   position: relative;
@@ -587,6 +601,8 @@ article#post-4 {
       .fp-gallery-container .fp-gallery-content .fp-gallery-cell div {
         width: 100%;
         height: 100%;
+        max-height: 300px;
+        overflow: hidden;
         display: -ms-flexbox;
         display: flex;
         -ms-flex-pack: center;
@@ -594,9 +610,21 @@ article#post-4 {
         -ms-flex-align: center;
             align-items: center; }
       .fp-gallery-container .fp-gallery-content .fp-gallery-cell img {
-        width: auto;
-        max-height: 250px;
-        max-width: 100%; }
+        width: 100%; }
+
+.footer-widget-area {
+  display: -ms-flexbox;
+  display: flex; }
+  .footer-widget-area .cg-quick-contact-form-class, .footer-widget-area .country_gourmet-business_hours-class {
+    width: 40%;
+    padding: 15px; }
+  .footer-widget-area .social-media-links-class {
+    width: 20%; }
+  .footer-widget-area .cg-quick-contact-form-class form {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column; }
 
 footer.site-footer {
   position: relative;

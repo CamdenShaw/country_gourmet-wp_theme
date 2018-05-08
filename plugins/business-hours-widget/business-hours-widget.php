@@ -11,7 +11,7 @@
  *
  * @license   GPL-2.0+
  * @link      https://github.com/CamdenShaw/country_gourmet-wp_theme
- * @copyright 2018 Country Gourmet
+ * @copyright 2018 Camden Shaw
  *
  * @wordpress-plugin
  * Plugin Name:       Business Hours Widget
@@ -19,6 +19,7 @@
  * Description:       The Red Widget Boilerplate
  * Version:           1.0.0
  * Author:            Camden Shaw
+ * Author URI:        https://github.com/CamdenShaw
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */

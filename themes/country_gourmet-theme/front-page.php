@@ -92,38 +92,72 @@ get_header(); ?>
                 ?>
             </div>
         </div>
+        <?php
+            $args = array(
+                'post_type' => 'artwork',
+                'orderby' => 'date'
+            );
+            $gallery_works = get_posts( $args );
+            if ( ! empty( $gallery_works ) && ! is_wp_error( $gallery_works ) ) :
+        ?>
         <div class="fp-gallery-container">
             <h4 class="fp-gallery-title">Back Gallery</h4>
             <div class="fp-gallery-content">
-                <?php
-                    $args = array(
-                        'post_type' => 'artwork',
-                        'orderby' => 'date'
-                    );
-                    $gallery_works = get_posts( $args );
-                    if ( ! empty( $gallery_works ) && ! is_wp_error( $gallery_works ) ) {
-                        $i = 0;
-                        while ( $i < 2 ){
-                            foreach ( $gallery_works as $work ) {
-                                if ( has_term( array('slug' => 'back-gallery'), 'artworks-type', $work->ID ) ) {
-                                    $back_gallery = CFS()->get(false, $work->ID);
-                                    if (!empty($back_gallery) && !is_wp_error($back_gallery)) {
-                                        $i++;
-                                        echo "<div class='fp-gallery-cell'>
-                                            <a href='{$work->guid}'><h3 class='fp-gallery-title1'> {$back_gallery[ 'artwork_title' ] } </h3></a>
-                                            <div><a href='{$work->guid}'><img class='fp-gallery-img1 {$work->post_name}' src='{$back_gallery[ 'artwork_image' ] }' /></a></div>
-                                        </div>";
-                                    }
-                                }
+            <?php
+            $i = 0;
+            $x = 0;
+                while ( $i < 4 ){
+                    foreach ( $gallery_works as $work ) {
+                        if ( has_term( array('slug' => 'back-gallery'), 'artworks-type', $work->ID ) ) {
+                            $back_gallery = CFS()->get(false, $work->ID);
+                            if ( ! empty( $back_gallery ) && ! is_wp_error( $back_gallery ) ) {
+                                $i++;
+                                echo "<div class='fp-gallery-cell back'>
+                                    <a href='{$work->guid}'><h3 class='fp-gallery-title'> {$back_gallery[ 'artwork_title' ] } </h3></a>
+                                    <div>
+                                        <a href='{$work->guid}'>
+                                            <img class='fp-gallery-img {$work->post_name}' src='{$back_gallery[ 'artwork_image' ] }' />
+                                        </a>
+                                    </div>
+                                </div>";
                             }
                         }
                     }
-                ?>
+                }
+            ?>
+            </div>
+        </div>
+        <div class="fp-gallery-container">
+            <h4 class="fp-gallery-title">Front Gallery</h4>
+            <div class="fp-gallery-content">
+            <?php
+                while ( $x < 2 ){
+                    foreach ( $gallery_works as $work ) {
+                        if ( has_term( array('slug' => 'front-gallery' ), 'artworks-type', $work->ID) ) {
+                            $front_gallery = CFS()->get( false, $work->ID );
+                            if ( ! empty( $front_gallery ) && ! is_wp_error( $front_gallery ) ) {
+                                $x++;
+                                echo "<div class='fp-gallery-cell front'>
+                                    <a href='{$work->guid}'><h3 class='fp-gallery-title'>{$front_gallery[ 'artwork_title' ]}</h3></a>   
+                                    <div>
+                                        <a href='{$work->guid}'>
+                                            <img class='fp-gallery-img {$work->post_name}' src='{$front_gallery[ 'artwork_image' ]}' />
+                                        </a>
+                                    </div>     
+                                </div>";
+                            }
+                        }
+                    }
+                }
+            endif; ?>
             </div>
         </div>
     </main>
+    <div class="sidebar-widget-area">
+        <?php dynamic_sidebar( 'sidebar-1' ); ?>
+    </div>
     <div class="footer-widget-area">
-        <?php get_sidebar( 'footer-widget' ); ?>
+        <?php dynamic_sidebar( 'footer-widget' ); ?>
     </div>
 </div>
 <?php get_footer(); ?>

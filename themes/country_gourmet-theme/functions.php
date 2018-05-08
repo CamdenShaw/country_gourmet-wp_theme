@@ -54,9 +54,9 @@ add_action( 'after_setup_theme', 'country_gourmet_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function country_gourmet_widgets_init() {
+function country_gourmet_sidebar_widget_init() {
     register_sidebar( array(
-        'name'          => esc_html( 'Footer Widget' ),
+        'name'          => esc_html( 'Sidebar' ),
         'id'            => 'sidebar-1',
         'description'   =>  '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -65,7 +65,7 @@ function country_gourmet_widgets_init() {
         'after_title'   => '</h2>'
     ) );
 }
-add_action( 'widgets_init', 'country_gourmet_widgets_init' );
+add_action( 'widgets_init', 'country_gourmet_sidebar_widget_init' );
 
 /**
  * Filter the stylesheet_uri to output the minified CSS file.

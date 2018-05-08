@@ -1,27 +1,29 @@
 /*-----------------------------------------------------------------
 # Sidebar
 -----------------------------------------------------------------*/
+.sidebar-widget-area {
+  aside.widget.country_gourmet-business_hours-class {
+    padding-right: 20px;
+    text-align: center;
+    position: fixed;
+    width: 25%;
+    right: 0;
+    top: 52px;
+    min-height: calc(100vh - 52px);
+    border-left: solid 1px $color__border;
 
-aside.widget.country_gourmet-business_hours-class {
-  padding-right: 20px;
-  text-align: center;
-  position: fixed;
-  width: 25%;
-  right: 0;
-  top: 52px;
-  min-height: calc(100vh - 53px);
-  border-left: solid 1px $color__border;
-
-  .country_gourmet-widget-address {
-    max-width: 251px;
-    margin-left: auto;
-    margin-right: auto;
+    .country_gourmet-widget-address {
+      max-width: 251px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 
-.logged-in {
+
+.logged-in .sidebar-widget-area {
   aside.widget.country_gourmet-business_hours-class {
     top: 83px;
-    min-height: calc(100vh - 85px);
+    min-height: calc(100vh - 83px);
   }
 }

@@ -1,3 +1,20 @@
+.footer-widget-area {
+    display: flex;
+  .cg-quick-contact-form-class, .country_gourmet-business_hours-class {
+    width: 40%;
+    padding: 15px;
+  }
+  .social-media-links-class {
+    width: 20%;
+  }
+  .cg-quick-contact-form-class {
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
 footer.site-footer {
   position: relative;
   bottom: 0;
