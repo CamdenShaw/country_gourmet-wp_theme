@@ -1,6 +1,7 @@
 <?php
 /**
  * Template Name: Front Page
+ *
  * @package Country_Gourmet_Theme
  */
 
