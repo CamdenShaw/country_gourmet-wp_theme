@@ -1,11 +1,15 @@
 .footer-widget-area {
-    display: flex;
+  display: flex;
+  text-align: center;
   .cg-quick-contact-form-class, .country_gourmet-business_hours-class {
     width: 40%;
     padding: 15px;
   }
   .social-media-links-class {
     width: 20%;
+    .fa {
+      font-size: 3rem;
+    }
   }
   .cg-quick-contact-form-class {
     form {

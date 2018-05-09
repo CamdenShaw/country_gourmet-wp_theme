@@ -197,6 +197,12 @@ th {
 body {
   min-height: calc(100vh - 69px); }
 
+h1 {
+  margin: 0; }
+
+p {
+  margin: 0; }
+
 /*------------------------------------------------------------------------
 # Navigation
 ------------------------------------------------------------------------*/
@@ -416,12 +422,15 @@ div#primary-menu {
 
 .footer-widget-area {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  text-align: center; }
   .footer-widget-area .cg-quick-contact-form-class, .footer-widget-area .country_gourmet-business_hours-class {
     width: 40%;
     padding: 15px; }
   .footer-widget-area .social-media-links-class {
     width: 20%; }
+    .footer-widget-area .social-media-links-class .fa {
+      font-size: 3rem; }
   .footer-widget-area .cg-quick-contact-form-class form {
     display: -ms-flexbox;
     display: flex;
@@ -442,11 +451,22 @@ footer.site-footer {
   display: none; }
 
 div#page.hfeed.site {
-  margin-right: calc(25% + 20px); }
+  margin-right: calc(25% + 20px);
+  min-height: 100vh; }
+
+.logged-in div#page.hfeed.site {
+  margin-right: calc(25% + 20px);
+  min-height: calc(100vh - 32px); }
 
 .site-main {
   width: 90%;
   margin: 0 auto; }
+
+.site-content {
+  min-height: calc(100vh - 58px); }
+
+.logged-in .site-content {
+  min-height: calc(100vh - 90px); }
 
 article#post-4 {
   padding-top: 100px;
@@ -614,12 +634,15 @@ article#post-4 {
 
 .footer-widget-area {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  text-align: center; }
   .footer-widget-area .cg-quick-contact-form-class, .footer-widget-area .country_gourmet-business_hours-class {
     width: 40%;
     padding: 15px; }
   .footer-widget-area .social-media-links-class {
     width: 20%; }
+    .footer-widget-area .social-media-links-class .fa {
+      font-size: 3rem; }
   .footer-widget-area .cg-quick-contact-form-class form {
     display: -ms-flexbox;
     display: flex;

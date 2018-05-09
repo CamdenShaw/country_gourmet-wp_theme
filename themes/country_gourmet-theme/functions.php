@@ -93,6 +93,16 @@ function country_gourmet_scripts() {
 add_action( 'wp_enqueue_scripts', 'country_gourmet_scripts' );
 
 /**
+ * Increase posts allowed for menu
+ */
+function wparchives_query( $is_it ) {
+    if ( $is_it->is_archive() && $is_it->is_main_query() && !is_admin() ) {
+        $is_it->set( 'posts_per_page', 1000 );
+    }
+}
+add_action( 'pre_get_posts', 'wparchives_query' );
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';

@@ -4,9 +4,22 @@
 
 div#page.hfeed.site {
   margin-right: calc(25% + 20px);
+  min-height: 100vh;
+}
+
+.logged-in div#page.hfeed.site {
+  margin-right: calc(25% + 20px);
+  min-height: calc(100vh - 32px);
 }
 
 .site-main {
   width: 90%;
   margin: 0 auto;
+}
+
+.site-content {
+  min-height: calc(100vh - 58px);
+}
+.logged-in .site-content {
+  min-height: calc(100vh - 90px);
 }

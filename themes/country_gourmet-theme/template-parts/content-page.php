@@ -9,16 +9,18 @@ if ( is_home() || is_archive() ) : ?>
     <article is="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <header class="entry-header">
             <?php if ( has_post_thumbnail() ) :
-                the_post_thumbnail( 'large' );
+                the_post_thumbnail( 'small' );
             endif;
+            $menu_item =  CFS()->get();
             the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
             if ( 'post' === get_post_type() ) : ?>
-            <div class="entry-meta">
-                <?php country_gourmet_posted_on(); ?> / <?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?> / <?php country_gourmet_posted_by(); ?>
-            </div> <!-- .entry-meta -->
+                <div class="entry-meta">
+                    <?php country_gourmet_posted_on(); ?> / <?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?> / <?php country_gourmet_posted_by(); ?>
+                </div> <!-- .entry-meta -->
             <?php endif; ?>
         </header>
         <div class="entry-content">
+            <?php echo var_dump( $menu_item ); ?>
             <?php the_excerpt(); ?>
             <div class="read-more-link rml"><a href="<?php echo get_permalink(); ?>"> Read More →</a></div>
         </div> <!-- .entry-content -->
